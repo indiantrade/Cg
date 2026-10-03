@@ -3,163 +3,377 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> GUJRATI TRADER - Learning Community</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<title>Gokul Chhabra | Stock Market Updates</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
 
-  .card {
-    width: 85%;
-    max-width: 340px; 
-    background: #010a0f;
-    border: 1.5px solid #00d2ff;
-    border-radius: 35px;
-    padding: 20px 15px;
-    text-align: center;
-    box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
-  }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-  .profile-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    border: 3px solid #00d2ff;
-    object-fit: cover;
-    margin-top: -5px;
-    box-shadow: 0 0 15px #00d2ff;
-  }
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    color:#fff;
+    background:
+        radial-gradient(circle at top,#123b52 0%,#07131d 45%,#02070b 100%);
+}
 
-  h1 {
-    color: #fff;
-    font-size: 20px;
-    margin: 15px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+.container{
+    width:100%;
+    max-width:440px;
+}
 
-  .features {
-    text-align: left;
-    margin: 0 auto;
-    width: 90%;
-  }
+.card{
+    position:relative;
+    padding:30px 22px 24px;
+    text-align:center;
+    border-radius:26px;
+    background:rgba(8,18,28,.94);
+    border:1px solid rgba(0,229,255,.25);
+    box-shadow:
+        0 0 30px rgba(0,229,255,.12),
+        0 20px 60px rgba(0,0,0,.55);
+    overflow:hidden;
+}
 
-  .feature-item {
-    color: #ccc;
-    font-size: 13px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    align-items: center;
-  }
+.card::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:#00e5ff;
+    filter:blur(100px);
+    opacity:.10;
+    top:-80px;
+    left:-60px;
+}
 
-  .feature-item:last-child { border-bottom: none; }
+/* TOP BADGE */
 
-  .icon { margin-right: 12px; font-size: 16px; }
+.live{
+    position:relative;
+    display:inline-block;
+    margin-bottom:18px;
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.4px;
+    color:#00e5ff;
+    background:rgba(0,229,255,.08);
+    border:1px solid rgba(0,229,255,.25);
+}
 
-  .join-text {
-    color: #eee;
-    font-size: 12px;
-    margin: 20px 0 12px;
-    font-weight: 300;
-  }
+/* PERFECT ROUND PROFILE IMAGE */
 
-  .telegram-btn {
-    display: block;
-    background: linear-gradient(90deg, #00d2ff 0%, #9247ff 100%);
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.3);
-  }
+.profile{
+    position:relative;
 
-  .hindi-quote {
-    color: #bbb;
-    font-size: 13px;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
+    width:120px;
+    height:120px;
 
-  .footer-box {
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-radius: 12px;
-    padding: 8px;
-    font-size: 11px;
-    color: #888;
-  }
+    display:block;
+    margin:0 auto 14px;
 
-  /* Link styling for Agency */
-  .footer-box a { 
-    color: #00d2ff; 
-    font-weight: bold; 
-    text-decoration: none;
-  }
+    border-radius:50%;
 
-  .disclaimer {
-    font-size: 9px;
-    color: #444;
-    margin-top: 12px;
-  }
+    object-fit:cover;
+    object-position:center;
+
+    aspect-ratio:1 / 1;
+
+    border:4px solid #00e5ff;
+
+    background:#07131d;
+
+    box-shadow:
+        0 0 0 3px rgba(0,229,255,.10),
+        0 0 25px rgba(0,229,255,.45),
+        0 0 55px rgba(0,229,255,.15);
+
+    overflow:hidden;
+}
+
+/* NAME */
+
+h2{
+    position:relative;
+    margin:5px 0 12px;
+
+    font-size:clamp(25px,7vw,34px);
+    line-height:1.2;
+    font-weight:800;
+
+    background:linear-gradient(
+        90deg,
+        #ffd700,
+        #ffffff,
+        #00e5ff,
+        #ffd700
+    );
+
+    background-size:250% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:shine 3s linear infinite;
+}
+
+@keyframes shine{
+    0%{
+        background-position:0% center;
+    }
+
+    100%{
+        background-position:250% center;
+    }
+}
+
+/* SUBTITLE */
+
+.subtitle{
+    position:relative;
+    color:#cbd5df;
+    font-size:14px;
+    line-height:1.7;
+    margin:0 auto 22px;
+    max-width:360px;
+}
+
+/* TELEGRAM BUTTON */
+
+.btn{
+    position:relative;
+
+    display:block;
+    width:100%;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:.3px;
+
+    color:#001014;
+
+    background:linear-gradient(
+        90deg,
+        #00e5ff,
+        #00ffd5
+    );
+
+    box-shadow:
+        0 8px 25px rgba(0,229,255,.25);
+
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(0,229,255,.4);
+}
+
+.pulse{
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(0,229,255,.45);
+    }
+
+    70%{
+        box-shadow:0 0 0 12px rgba(0,229,255,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(0,229,255,0);
+    }
+
+}
+
+/* FEATURES */
+
+.list{
+    position:relative;
+
+    margin-top:22px;
+
+    display:grid;
+    gap:9px;
+}
+
+.list div{
+    padding:11px 10px;
+
+    border-radius:11px;
+
+    text-align:left;
+
+    font-size:12px;
+    font-weight:600;
+
+    color:#e8f7fa;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.07);
+}
+
+/* BOTTOM */
+
+.timer{
+    position:relative;
+
+    margin-top:20px;
+
+    font-size:12px;
+    font-weight:600;
+
+    color:#9db0bd;
+}
+
+/* AGENCY */
+
+.agency{
+    position:relative;
+
+    margin-top:18px;
+    padding-top:15px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    font-size:10px;
+    color:#71818c;
+
+    letter-spacing:.3px;
+}
+
+.agency a{
+    color:#00e5ff;
+
+    text-decoration:none;
+
+    font-weight:700;
+}
+
+.agency a:hover{
+    text-decoration:underline;
+}
+
+/* MOBILE */
+
+@media(max-width:380px){
+
+    .card{
+        padding:25px 17px 20px;
+    }
+
+    .profile{
+        width:105px;
+        height:105px;
+    }
+
+    h2{
+        font-size:26px;
+    }
+
+    .btn{
+        font-size:15px;
+    }
+
+}
+
 </style>
 </head>
+
 <body>
 
+<div class="container">
+
 <div class="card">
-  <img src="https://i.ibb.co/GQYGXHF4/In-Shot-20260927-223648191.jpg" alt=" GUJRATI TRADER" class="profile-img">
 
-  <h1> GUJRATI TRADER</h1>
+    <div class="live">
+        📈 PREMIUM STOCK MARKET UPDATES
+    </div>
 
-  <div class="features">
-    <div class="feature-item"><span class="icon"></span> Learning & Educational Sessions</div>
-    <div class="feature-item"><span class="icon"></span> Market Concepts & Awareness</div>
-    <div class="feature-item"><span class="icon"></span> Chart Reading Concepts</div>
-    <div class="feature-item"><span class="icon"></span> Educational Case Discussions</div>
-  </div>
+    <!-- ROUND PROFILE IMAGE -->
 
-  <p class="join-text">Join our learning community and grow your knowledge</p>
+    <img
+        src="https://i.ibb.co/zTjm4KYD/Ew2wsp2w-E-8-BSLTfb-VB-PVC-Vd-WXDDm-P5-Jw-Dg2cp-V9-QHql-PVs-XGzzf3w-Hq-VLMg-Jz-U0sm-HDs-O2y-Vcx5b3-Np-G.jpg"
+        class="profile"
+        alt="Gokul Chhabra"
+        loading="eager"
+    >
 
-  <a href="https://t.me/+mc6hSYTJFoU0MmRl" class="telegram-btn">JOIN TELEGRAM</a>
+    <h2>💎 Gokul Chhabra 💎</h2>
 
-  <p class="hindi-quote">     ,     </p>
+    <p class="subtitle">
+        Get Daily Stock Market Updates, Market Analysis
+        & Trading Insights
+    </p>
 
-  <div class="footer-box">
-    This Channel Advertise By <a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">AD BUILD AGENCY</a>
-  </div>
+    <a
+        href="https://t.me/+TYdK2PaKXKA0NGI1"
+        class="btn pulse"
+    >
+        🚀 JOIN TELEGRAM
+    </a>
 
-  <div class="disclaimer">
-    Terms | Privacy | Disclaimer <br>
-    This site is not part of Facebook� or endorsed by Facebook�.
-  </div>
+    <div class="list">
+
+        <div>✔ NIFTY 50 ANALYSIS</div>
+
+        <div>✔ BANK NIFTY UPDATES</div>
+
+        <div>✔ STOCK MARKET INSIGHTS</div>
+
+        <div>✔ INTRADAY MARKET UPDATES</div>
+
+        <div>✔ DAILY MARKET LEVELS</div>
+
+    </div>
+
+    <div class="timer">
+        📊 FREE MARKET UPDATES
+    </div>
+
+    <!-- AGENCY CREDIT -->
+
+    <div class="agency">
+        Ads & Landing Page by
+        <a
+            href="https://telegram.me/+3XoqJNLxYHswNTc1"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            AdBuildagency
+        </a>
+    </div>
+
 </div>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2552096918611818');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2552096918611818&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
+</div>
+
 </body>
 </html>
